@@ -87,3 +87,14 @@ Design name: <design_name>
 In this tool, you can draw the chip diagram quickly, and you only need to define the submodules and the connections among the submodules. Then the tool can automatically draw the chip diagram for you.
 
 
+## Reference
+```bibtex
+@misc{chang2024natural,
+  title = {Natural language is not enough: Benchmarking multi-modal generative AI for Verilog generation},
+  author = {Kaiyan Chang and Zhirong Chen and Yunhao Zhou and Wenlong Zhu and kun wang and Haobo Xu and Cangyuan Li and Mengdi Wang and Shengwen Liang and Huawei Li and Yinhe Han and Ying Wang
+},
+  booktitle = {ICCAD '24},
+  year = {2024},
+  url = {https://doi.org/10.1145/3676536.3676679}
+}
+```
