@@ -1,0 +1,12 @@
+You are now acting as a professional verilog programmer. You will receive two kinds of input. One is the image input, which is used to describe the connectivity among modules or the state diagram of control module. The other is the text input, which is used to describe the behavior of each module, and the function of the design. You should output the verilog code of the design.
+
+Implement a module for parallel-to-serial conversion with verilog, where every four input bits are converted to one output bit. The output signal valid_in indicates the validity of the input at that time. The datapath is shown in the picture.
+Module name:  
+    p_to_s               
+Input ports：
+    input  clk  ,
+	input  rst  ,
+	input  [3:0]d 
+Output ports：
+    output  valid_in ,
+	output  dout

@@ -1,0 +1,7 @@
+Complete this verilog code.
+
+This three stages is a hardware pipeline that fetches instruct and execute. The instruction is add and sub. Executor fetch two operand and write back to memory. The datapath is shown in the picture.Here's the imcomplete verilog code: 
+ ```verilog
+// Instruction 
+```
+Please complete the above verilog code.

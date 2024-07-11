@@ -1,0 +1,56 @@
+Give me the next token of the verilog code snippet.
+
+Complete the design of unsigned 8bit multiplier based on pipelining processing with verilog. The datapath is shown in the picture. Here's the imcomplete verilog code: 
+ ```verilog
+module verified_multi_pipe_8bit#(
+    parameter size = 8
+)(
+          clk,      
+          rst_n,       
+          mul_a,       
+          mul_b, 
+          mul_en_in,
+ 
+          mul_en_out,      
+          mul_out    
+);
+ 
+   input clk;           
+   input rst_n; 
+   input mul_en_in;      
+   input [size-1:0] mul_a;       
+   input [size-1:0] mul_b;       
+ 
+   output reg mul_en_out;  
+   output reg [size*2-1:0] mul_out;    
+ 
+            
+   reg [2:0] mul_en_out_reg;
+ always@(posedge clk or negedge rst_n)
+       if(!rst_n)begin
+            mul_en_out_reg <= 'd0;             
+            mul_en_out     <= 'd0;                           
+       end
+       else begin
+            mul_en_out_reg <= {mul_en_out_reg[1:0],mul_en_in};            
+            mul_en_out     <= mul_en_out_reg[2];                  
+       end
+ 
+ 
+    reg [7:0] mul_a_reg;
+    reg [7:0] mul_b_reg;
+  always @(posedge clk or negedge rst_n)
+         if(!rst_n) begin
+              mul_a_reg <= 'd0;
+              mul_a_reg <= 'd0;
+         end
+         else begin
+              mul_a_reg <= mul_en_in ? mul_a :'d0;
+              mul_b_reg <= mul_en_in ? mul_b :'d0;
+         end
+ 
+  
+     wire [15:0] temp [size-1:0];
+  assign temp[0] = mul_b_reg[0]? {8'b0,mul_a_reg} 
+```
+Please give me the next token of the code snippet.

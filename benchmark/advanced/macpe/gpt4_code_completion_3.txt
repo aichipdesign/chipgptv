@@ -1,0 +1,11 @@
+
+
+Complete a processor unit with verilog. Every processing unit(PE) has two input and one output. The function of every PE is to multiply two input and add the value from inner register. The final result is c. The output c is a wire to the register. Here's the imcomplete verilog code: 
+ ```verilog
+module PE (
+  input clk,
+  input rst,
+  input [15:0] a,
+  
+```
+Please complete the above verilog code.

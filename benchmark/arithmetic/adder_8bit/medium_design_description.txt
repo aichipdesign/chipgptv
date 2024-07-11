@@ -1,0 +1,13 @@
+
+
+Implement a module of an 8 bit adder using verilog in gate level. The datapath is shown in the picture.
+
+Module name:  
+    adder_8bit               
+Input ports：
+    input [7:0] a, b,
+    input cin
+Output ports：
+    output [7:0] sum,
+    output SUM,
+    output cout

@@ -1,0 +1,9 @@
+
+
+Implement a FSM detection circuit that detects a single bit input IN with verilog. Let the number of 1's in input be x, and the number of 0's in input be y. When x-y>0 and (x-y) modulo 3 is 2,output MATCH is high; when y-x>0 and (y-x) modulo 3 is 1,  output MATCH is high, and MATCH is 0 in other cases.The state transfer diagram is shown in the picture. You should first give me the understanding of the state diagram in the picture, and then output the verilog code of the design.
+
+module verified_fsm3 (
+    input IN, CLK, RST,
+    output reg MATCH
+);
+

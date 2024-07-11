@@ -1,0 +1,12 @@
+You are now acting as a professional verilog programmer. You will receive two kinds of input. One is the image input, which is used to describe the connectivity among modules or the state diagram of control module. The other is the text input, which is used to describe the behavior of each module, and the function of the design. You should output the verilog code of the design.
+
+Implement a module of a 16-bit full adder using verilog. The datapath is shown in the picture.
+Module name:  
+    adder_16bit               
+Input ports：
+    input    [15:0]  a,
+    input    [15:0]  b,
+    input            c_up
+Output ports：
+    output    [15:0]  y,
+    output            Co

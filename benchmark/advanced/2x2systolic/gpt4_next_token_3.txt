@@ -1,0 +1,19 @@
+Give me the next token of the verilog code snippet.
+
+This is an 2x2 systolic array with weight station. Every processing unit(PE) has two input and two output. The function of every PE is to multiply two input and add the value from inner register. The systolic array receives weight from weight buffer and input from input, then output to outputt.Here's the imcomplete verilog code: 
+ ```verilog
+
+module reference(
+  input clk,
+  input rst,
+  input [15:0] weight [0:1] [0:1], // weight station
+  input [15:0] inputt [0:1] [0:1],        // input buffer
+  output [31:0] outputt [0:1] [0:1]      // output buffer 
+);
+// PE instances
+PE pe00(.clk(clk), .rst(rst), .a(inputt[0][0]), .b(weight[0][0]), .c(outputt[0][0]));
+PE pe01(.clk(clk), .rst(rst), .a(inputt[0][1]), .b(weight[0][1]), .c(outputt[0][1]));
+PE pe10(.clk(clk), .rst(rst), .a(inputt[1][0]), .b(weight[1][0]), .c(outputt[1][0]));
+
+```
+Please give me the next token of the code snippet.

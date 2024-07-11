@@ -1,0 +1,16 @@
+You are now acting as a professional verilog programmer. You will receive two kinds of input. One is the image input, which is used to describe the connectivity among modules or the state diagram of control module. The other is the text input, which is used to describe the behavior of each module, and the function of the design. You should output the verilog code of the design.
+
+Implement a module of a ripple 64 bit adder with verilog, which is divided into 4 sections to achieve 4-stage pipeline. The datapath is shown in the picture. The module contains 4 16-bit adders, the addend and sum are passed down by flip flops to synchronize the result. Please first analyze the pipeline adder in the picture, and then give me the verilog code.
+
+Module name:  
+    adder_64bit               
+Input ports：
+    input                               clk             ,
+    input                               rst_n           ,
+    input                               i_en            ,
+    input       [DATA_WIDTH-1:0]        adda            ,
+    input       [DATA_WIDTH-1:0]        addb            ,
+   
+Output ports：
+    output reg  [DATA_WIDTH:0]          result          ,
+    output reg                          o_en            

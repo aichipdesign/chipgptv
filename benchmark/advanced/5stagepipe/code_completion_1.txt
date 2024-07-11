@@ -1,0 +1,63 @@
+Complete this verilog code.
+
+This five stages is a hardware pipeline that fetches instruct and execute. The instruction is add and sub. Executor fetch two operand and write back to memory. The datapath is shown in the picture.Here's the imcomplete verilog code: 
+ ```verilog
+// Instruction types
+`define ADD_INST 2'b00
+`define SUB_INST 2'b01
+// Pipeline stages
+module fetch_stage(
+  input clk,
+  output reg [31:0] inst,
+  input [31:0] instr_mem_in [0:31],
+  input rst
+);
+  reg [31:0] pc;
+  // Fetch logic
+  always @(posedge clk or posedge rst) begin
+    // Fetch next instruction
+    if(rst)
+    	begin
+    	pc <= 0;
+    	inst <= 0;
+    	end
+    else 
+    	begin
+    	inst <= instr_mem_in[pc>>2];
+    	pc <= pc + 4;
+    	end
+  end
+endmodule
+module decode_stage(
+  input clk,
+  input [31:0] inst,
+  output reg [4:0] rs1,
+  output reg [4:0] rs2,
+  output reg [1:0] op,
+  output reg [4:0] rd
+
+);
+  always @(posedge clk) begin
+    rs1 <= inst[29:25];
+    rs2 <= inst[24:20];
+    op <= inst[31:30];
+    rd <= inst[4:0];
+  end
+endmodule
+module execute_stage(
+  input clk,
+  input [4:0] rs1,
+  input [4:0] rs2,
+  input [31:0] reg_file [0:31],
+  input [1:0] op,
+  output reg [31:0] result,
+  input [4:0] rdin1,//
+  output reg [4:0] rdout1//
+);
+
+  always @(posedge clk) begin
+    case(op)
+      `ADD_INST: begin
+        result<= reg_file[rs1] 
+```
+Please complete the above verilog code.

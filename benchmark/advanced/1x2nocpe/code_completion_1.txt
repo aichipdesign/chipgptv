@@ -1,0 +1,20 @@
+Complete this verilog code.
+
+Every processing unit(PE) has two input and two output. The function of every PE is to multiply two input and add the value from inner register. The final result is c0. At the next cycle, the b0 will pass to right PE as b1. There are two PE. The datapath is shown in the picture.Here's the imcomplete verilog code: 
+ ```verilog
+module reference (
+  input clk,
+  input rst,
+  input [15:0] a0,
+  input [15:0] a1,
+  input [15:0] b0,
+  output [31:0] c0,
+  output [31:0] c1
+);
+  reg [15:0] b1;
+  PE pe0 (
+    .clk(clk),
+    .rst(rst),
+    
+```
+Please complete the above verilog code.

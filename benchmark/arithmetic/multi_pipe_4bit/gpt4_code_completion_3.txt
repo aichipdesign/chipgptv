@@ -1,0 +1,28 @@
+
+
+Complete the design of 4bit unsigned number pipeline multiplier with verilog. Here's the imcomplete verilog code: 
+ ```verilog
+`timescale 1ns/1ns
+
+module verified_multi_pipe#(
+	parameter size = 4
+)(
+	input 						clk 		,   
+	input 						rst_n		,
+	input	[size-1:0]			mul_a		,
+	input	[size-1:0]			mul_b		,
+ 
+ 	output	reg	[size*2-1:0]	mul_out		
+);
+    //parameter 
+    parameter N = size * 2;
+    //defination
+    wire [N - 1 : 0] temp [0 : 3];
+    
+    reg [N - 1 : 0] adder_0;
+    reg [N - 1 : 0] adder_1;
+    
+    //output 
+    
+```
+Please complete the above verilog code.

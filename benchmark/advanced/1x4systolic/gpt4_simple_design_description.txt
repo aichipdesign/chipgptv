@@ -1,0 +1,15 @@
+Generate a 1x4systolic module.
+
+module systolic1x4(
+  input clk,
+  input rst,
+  input [15:0] a0,
+  input [15:0] a1,
+  input [15:0] a2,
+  input [15:0] a3,
+  input [15:0] b0,
+  output [31:0] c0,
+  output [31:0] c1,
+  output [31:0] c2,
+  output [31:0] c3 
+);

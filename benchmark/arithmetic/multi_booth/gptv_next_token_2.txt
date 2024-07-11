@@ -1,0 +1,17 @@
+Give me the next token of the verilog code snippet.
+
+Complete an 8bit booth-4 multiplier with verilog. The datapath is shown in the picture. Here's the imcomplete verilog code: 
+ ```verilog
+`timescale 1ns / 1ps
+
+module booth4_mul #(
+    parameter WIDTH_M = 8,
+    parameter WIDTH_R = 8
+) (
+    input                            clk,
+    input                            rstn,
+    input                            vld_in,
+    input      [        WIDTH_M-1:0] multiplicand,
+    
+```
+Please give me the next token of the code snippet.

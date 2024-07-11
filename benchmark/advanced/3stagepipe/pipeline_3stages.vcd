@@ -1,0 +1,77 @@
+$date
+	Sun Nov 12 16:12:26 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_pipeline $end
+$var wire 32 ! result [31:0] $end
+$var wire 32 " inst [31:0] $end
+$var reg 1 # clk $end
+$var reg 1 $ rst $end
+$scope module execute $end
+$var wire 1 # clk $end
+$var wire 32 % inst [31:0] $end
+$var reg 32 & result [31:0] $end
+$upscope $end
+$scope module fetch $end
+$var wire 1 # clk $end
+$var wire 1 $ rst $end
+$var reg 32 ' inst [31:0] $end
+$var reg 32 ( pc [31:0] $end
+$upscope $end
+$scope module writeback $end
+$var wire 1 # clk $end
+$var wire 32 ) result [31:0] $end
+$var reg 32 * reg_file [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx *
+bx )
+b0 (
+b0 '
+bx &
+b0 %
+1$
+0#
+b0 "
+bx !
+$end
+#5
+b100 (
+b10001000011000000000000000 "
+b10001000011000000000000000 %
+b10001000011000000000000000 '
+1#
+0$
+#10
+0#
+#15
+b11110 !
+b11110 &
+b11110 )
+b1000 (
+b1000010001000010000000000000000 "
+b1000010001000010000000000000000 %
+b1000010001000010000000000000000 '
+1#
+#20
+0#
+#25
+b11111111111111111111111111110110 !
+b11111111111111111111111111110110 &
+b11111111111111111111111111110110 )
+b11110 *
+b1100 (
+b11000110000100010000000000000000 "
+b11000110000100010000000000000000 %
+b11000110000100010000000000000000 '
+1#
+#30
+0#

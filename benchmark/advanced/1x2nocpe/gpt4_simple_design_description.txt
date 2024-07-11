@@ -1,0 +1,13 @@
+Generate a 1x2nocpe module.
+
+module nocpe1x2 (
+  input clk,
+  input rst,
+  input [15:0] a0,
+  input [15:0] a1,
+  input [15:0] b0,
+  output [31:0] c0,
+  output [31:0] c1
+);
+
+

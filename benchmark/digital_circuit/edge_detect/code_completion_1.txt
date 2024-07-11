@@ -1,0 +1,24 @@
+
+
+Complete a module for edge detection with verilog, there is a slowly changing 1 bit signal a. When the rising edge of signal a is detected, the indicating signal rise is given; when the falling edge of signal A is shown, the indicating signal down is given. rise and down are high on the next clock when the corresponding edge appears, and then return to 0 until the corresponding edge appears again. The datapath is shown in the picture.Here's the imcomplete verilog code: 
+ ```verilog
+`timescale 1ns/1ns
+module verified_edge_detect(
+	input clk,
+	input rst_n,
+	input a,
+	
+	output reg rise,
+	output reg down
+);
+	reg a0;
+    always@(posedge clk or negedge rst_n) begin
+        if(~rst_n) begin
+            rise <= 1'b0;
+            down <= 1'b0;
+        end 
+        else begin
+            if(a & ~a0) begin
+                rise 
+```
+Please complete the above verilog code.

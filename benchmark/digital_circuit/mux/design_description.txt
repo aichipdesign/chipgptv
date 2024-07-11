@@ -1,0 +1,15 @@
+You are now acting as a professional verilog programmer. You will receive two kinds of input. One is the image input, which is used to describe the connectivity among modules or the state diagram of control module. The other is the text input, which is used to describe the behavior of each module, and the function of the design. You should output the verilog code of the design.
+
+Implement a multi-bit MUX synchronizer with verilog, data_in will remain constant during the period when data_en is high, and data_en is high for at least 3 B clock cycles. When the value of data_en is high, data can be synchronized. The data change frequency of data_in is very low. The change interval between two adjacent data is at least 10 B clock cycles. The datapath is shown in the picture.
+
+Module name:  
+    mux               
+Input ports：
+    input 				clk_a	, 
+	input 				clk_b	,   
+	input 				arstn	,
+	input				brstn   ,
+	input		[3:0]	data_in	,
+	input               data_en 
+Output ports：
+    output reg  [3:0] 	dataout

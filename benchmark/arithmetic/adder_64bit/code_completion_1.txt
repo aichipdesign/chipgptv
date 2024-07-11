@@ -1,0 +1,57 @@
+
+
+Complete a module of a ripple 64 bit adder with verilog, which is divided into 4 sections to achieve 4-stage pipeline. The datapath is shown in the picture. The module contains 4 16-bit adders, the addend and sum are passed down by flip flops to synchronize the result. Please first analyze the pipeline adder in the picture, and then give me the verilog code.Here's the imcomplete verilog code: 
+ ```verilog
+module verified_adder_64bit
+#(
+    parameter           DATA_WIDTH = 64,
+    parameter           STG_WIDTH  = 16
+)
+(
+    input                               clk             ,
+    input                               rst_n           ,
+    input                               i_en            ,
+    input       [DATA_WIDTH-1:0]        adda            ,
+    input       [DATA_WIDTH-1:0]        addb            ,
+    output      [DATA_WIDTH:0]          result          ,
+    output reg                          o_en            
+);
+reg         stage1;
+reg         stage2;
+reg         stage3;
+
+wire [STG_WIDTH-1:0]  a1;
+wire [STG_WIDTH-1:0]  b1;
+wire [STG_WIDTH-1:0]  a2;
+wire [STG_WIDTH-1:0]  b2;
+wire [STG_WIDTH-1:0]  a3;
+wire [STG_WIDTH-1:0]  b3;
+wire [STG_WIDTH-1:0]  a4;
+wire [STG_WIDTH-1:0]  b4;
+
+reg  [STG_WIDTH-1:0]  a2_ff1;
+reg  [STG_WIDTH-1:0]  b2_ff1;
+
+reg  [STG_WIDTH-1:0]  a3_ff1;
+reg  [STG_WIDTH-1:0]  b3_ff1;
+reg  [STG_WIDTH-1:0]  a3_ff2;
+reg  [STG_WIDTH-1:0]  b3_ff2;
+
+reg  [STG_WIDTH-1:0]  a4_ff1;
+reg  [STG_WIDTH-1:0]  b4_ff1;
+reg  [STG_WIDTH-1:0]  a4_ff2;
+reg  [STG_WIDTH-1:0]  b4_ff2;
+reg  [STG_WIDTH-1:0]  a4_ff3;
+reg  [STG_WIDTH-1:0]  b4_ff3;
+
+reg                   c1;
+reg                   c2;
+reg                   c3;
+reg                   c4;
+
+reg  [STG_WIDTH-1:0]  s1;
+reg  [STG_WIDTH-1:0]  s2;
+reg  [STG_WIDTH-1:0]  s3;
+reg  [STG_WIDTH-1:0]  
+```
+Please complete the above verilog code.

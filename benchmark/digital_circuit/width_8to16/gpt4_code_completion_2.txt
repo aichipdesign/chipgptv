@@ -1,0 +1,11 @@
+
+
+Complete a data width conversion circuit that converts 8-bit data input to 16-bit data output with verilog. The first arriving 8-bit data should be placed in the higher 8 bits of the 16-bit data output.Here's the imcomplete verilog code: 
+ ```verilog
+`timescale 1ns/1ns
+module verified_width_8to16(
+	input 				   clk 		,   
+	input 				   rst_n		,
+	input				      
+```
+Please complete the above verilog code.

@@ -1,0 +1,38 @@
+Give me the next token of the verilog code snippet.
+
+Complete a module using verilog to achieve serial input data accumulation output, input input 8bit data, whenever the module receives 4 input data, the output outputs 4 received data accumulation results. The input and output interfaces interact with the upstream and downstream using the valid-ready two-way handshake mechanism. When both upstream and downstream are required to be able to transmit at full speed, there is no bubble in data transmission, and no additional performance loss can be caused due to the design of this module. The datapath is shown in the picture.Here's the imcomplete verilog code: 
+ ```verilog
+`timescale 1ns/1ns
+
+module verified_accu(
+    input               clk         ,   
+    input               rst_n       ,
+    input       [7:0]   data_in     ,
+    input               valid_a     ,
+    input               ready_b     ,
+ 
+    output              ready_a     ,
+    output  reg         valid_b     ,
+    output  reg [9:0]   data_out
+);
+    
+   reg [1:0] count;
+   wire add_cnt;
+   wire end_cnt;
+
+   assign add_cnt = valid_a && ready_a;
+   assign end_cnt = valid_a && ready_a && (count == 'd3);
+   
+   //count
+   always @(posedge clk or negedge rst_n) begin
+       if(!rst_n) begin
+          count <= 0;
+       end
+       else if(end_cnt) begin
+          count <= 0;
+       end
+       else if(add_cnt) begin
+          count <= count + 1;
+       
+```
+Please give me the next token of the code snippet.

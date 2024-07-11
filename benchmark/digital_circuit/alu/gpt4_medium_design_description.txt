@@ -1,0 +1,17 @@
+
+
+Implement an ALU for 32bit MIPS-ISA CPU with verilog. The “a” and “b” are the two oprands of the ALU, the “aluc” is the opcode, the “r” gives out the result. “zero” means if the result is zero, “carry” means if there is a carry bit, “negative” means if the result is negative, “overflow” means if the computation is overflow, the “flag” is the result of “slt” and “sltu” instructions. "LUI" left shift input "a" by 16. 
+
+Module name:  
+    alu               
+Input ports：
+    input [31:0] a,
+    input [31:0] b,
+    input [5:0] aluc,
+Output ports：
+    output [31:0] r,
+    output zero,
+    output carry,
+    output negative,
+    output overflow,
+    output flag

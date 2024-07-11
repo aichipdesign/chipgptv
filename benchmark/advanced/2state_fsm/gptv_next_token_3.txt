@@ -1,0 +1,23 @@
+Give me the next token of the verilog code snippet.
+
+The state machine has two states. One of the state is S0, the other is S1. The output of S0 is 9, the output of S1 is 8. The state machine would change its state when a is 1 and b is 0. The datapath is shown in the picture.Here's the imcomplete verilog code: 
+ ```verilog
+// State machine design
+module state_machine(
+  input a,
+  input b,
+  input clk,
+  input rst,
+  output reg [3:0] state
+);
+parameter S0 = 4'b1001;
+parameter S1 = 4'b1000;
+always @(posedge clk) begin
+  if (rst) begin
+    state <= S0;
+  end
+  else begin
+    case (state)
+    S0: if (a & ~b) 
+```
+Please give me the next token of the code snippet.

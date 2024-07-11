@@ -1,0 +1,15 @@
+Generate a alu module according to the function description in the image
+
+Module name:  
+    alu               
+Input ports：
+    input [31:0] a,
+    input [31:0] b,
+    input [5:0] aluc,
+Output ports：
+    output [31:0] r,
+    output zero,
+    output carry,
+    output negative,
+    output overflow,
+    output flag

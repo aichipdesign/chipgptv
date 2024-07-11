@@ -1,0 +1,11 @@
+Generate a edge_detect module according to the function description in the image
+
+Module name:  
+    edge_detect               
+Input ports：
+    input clk,
+	input rst_n,
+	input a 
+Output ports：
+    output reg rise,
+	output reg down

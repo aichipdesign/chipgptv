@@ -1,0 +1,31 @@
+Give me the next token of the verilog code snippet.
+
+Complete a data width conversion circuit that converts 8-bit data input to 16-bit data output with verilog. The first arriving 8-bit data should be placed in the higher 8 bits of the 16-bit data output.Here's the imcomplete verilog code: 
+ ```verilog
+`timescale 1ns/1ns
+module verified_width_8to16(
+	input 				   clk 		,   
+	input 				   rst_n		,
+	input				      valid_in	,
+	input	   [7:0]		   data_in	,
+ 
+ 	output	reg			valid_out,
+	output   reg [15:0]	data_out
+);
+reg 	[7:0]		data_lock;  //data buffer
+reg 				flag	   ;
+//input data buff in data_lock
+always @(posedge clk or negedge rst_n ) begin
+	if(!rst_n) 
+		data_lock <= 'd0;
+	else if(valid_in && !flag)
+		data_lock <= data_in;
+end
+//generate flag
+always @(posedge clk or negedge rst_n ) begin
+	if(!rst_n) 
+		flag <= 'd0;
+	else if(valid_in)
+		
+```
+Please give me the next token of the code snippet.

@@ -1,0 +1,9 @@
+
+
+Complete a frequency divider that the input clock frequency of 100MHz signal with verilog, and the outputs are 3 clock frequencies: 50MHz, 10MHz, 1MHz.Here's the imcomplete verilog code: 
+ ```verilog
+module verified_freq_div (CLK_in,CLK_50,CLK_10,CLK_1,RST);
+input CLK_in,RST;
+
+```
+Please complete the above verilog code.

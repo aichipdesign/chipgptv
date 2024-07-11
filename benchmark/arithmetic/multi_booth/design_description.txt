@@ -1,0 +1,14 @@
+You are now acting as a professional verilog programmer. You will receive two kinds of input. One is the image input, which is used to describe the connectivity among modules or the state diagram of control module. The other is the text input, which is used to describe the behavior of each module, and the function of the design. You should output the verilog code of the design.
+
+Implement an 8bit booth-4 multiplier with verilog. The datapath is shown in the picture. 
+Module name:  
+    booth4_mul               
+Input ports：
+    input                            clk,
+    input                            rstn,
+    input                            vld_in,
+    input      [        WIDTH_M-1:0] multiplicand,
+    input      [        WIDTH_R-1:0] multiplier
+Output ports：
+    output     [WIDTH_M+WIDTH_R-1:0] mul_out,
+    output reg                       done

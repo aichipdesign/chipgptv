@@ -1,0 +1,11 @@
+Generate a pulse_detect module according to the function description in the image
+
+Module name:  
+    pulse_detect               
+Input ports：
+    input                 clk_fast    , 
+    input                 clk_slow    ,   
+    input                 rst_n        ,
+    input                 data_in	
+Output ports：
+     output               dataout

@@ -1,0 +1,28 @@
+
+
+This three stages is a hardware pipeline that fetches instruct and execute. The instruction is add and sub. Executor fetch two operand and write back to memory. The datapath is shown in the picture.
+
+// Instruction types
+`define ADD_INST 2'b00
+`define SUB_INST 2'b01
+// Pipeline stages 
+module fetch_stage(
+  input clk,
+  output reg [31:0] inst,
+  input [31:0] instr_mem_in [0:31],
+  input rst
+);
+
+module execute_stage(
+  input clk,
+  input [31:0] inst,
+  input [31:0] reg_file [0:31],
+  output reg [31:0] result
+);
+
+module writeback_stage(
+  input clk,
+  input [31:0] result,
+  // Writeback
+  output reg [31:0] reg_file 
+);

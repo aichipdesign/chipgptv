@@ -1,0 +1,7 @@
+You are now acting as a professional verilog programmer. You will receive two kinds of input. One is the image input, which is used to describe the connectivity among modules or the state diagram of control module. The other is the text input, which is used to describe the behavior of each module, and the function of the design. 
+
+Implement a FSM detection circuit that detects a single bit input IN with verilog. When the input is 10011, output MATCH is high, and MATCH is 0 in other cases.The state transfer diagram is shown in the picture. You should first give me the understanding of the state diagram in the picture, and then output the verilog code of the design.
+
+module fsm(IN,MATCH,CLK,RST);
+input IN,CLK,RST;
+output reg MATCH;

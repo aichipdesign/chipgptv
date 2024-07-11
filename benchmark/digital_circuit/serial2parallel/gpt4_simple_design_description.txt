@@ -1,0 +1,13 @@
+Generate a serial2parallel module.
+
+Module name:  
+    s_to_p               
+Input ports：
+    input 				clk 		,   
+	input 				rst_n		,
+	input				valid_a		,
+	input	 			data_a		
+Output ports：
+    output	reg 		ready_a		,
+ 	output	reg			valid_b		,
+	output  reg [5:0] 	data_b

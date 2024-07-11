@@ -1,0 +1,6 @@
+Generate a 4state_fsm module.
+
+module verified_fsm4 (
+    input IN, CLK, RST,
+    output reg MATCH
+);

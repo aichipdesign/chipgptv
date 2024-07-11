@@ -1,0 +1,21 @@
+Give me the next token of the verilog code snippet.
+
+Complete the design of 4bit unsigned number pipeline multiplier with verilog. The datapath is shown in the picture. Here's the imcomplete verilog code: 
+ ```verilog
+`timescale 1ns/1ns
+
+module verified_multi_pipe#(
+	parameter size = 4
+)(
+	input 						clk 		,   
+	input 						rst_n		,
+	input	[size-1:0]			mul_a		,
+	input	[size-1:0]			mul_b		,
+ 
+ 	output	reg	[size*2-1:0]	mul_out		
+);
+    //parameter 
+    parameter N = size * 2;
+    
+```
+Please give me the next token of the code snippet.

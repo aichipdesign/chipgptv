@@ -1,0 +1,12 @@
+You are now acting as a professional verilog programmer.
+
+This is an 2x2 systolic array with weight station. Every processing unit(PE) has two input and two output. The function of every PE is to multiply two input and add the value from inner register. The systolic array receives weight from weight buffer and input from inputt, then output to outputt. 
+
+
+module systolic2x2(
+  input clk,
+  input rst,
+  input [15:0] weight [0:1] [0:1], // weight station
+  input [15:0] inputt [0:1] [0:1],        // input buffer
+  output [31:0] outputt [0:1] [0:1]      // output buffer 
+);

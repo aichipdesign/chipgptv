@@ -1,0 +1,11 @@
+Generate a parallel2serial module according to the function description in the image
+
+Module name:  
+    p_to_s               
+Input ports：
+    input  clk  ,
+	input  rst  ,
+	input  [3:0]d 
+Output ports：
+    output  valid_in ,
+	output  dout

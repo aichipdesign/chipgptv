@@ -1,0 +1,14 @@
+Generate a accu module according to the function description in the image
+
+Module name:  
+    accu               
+Input ports：
+    input 				clk 		,   
+	input 				rst_n		,
+	input		[7:0]	data_in		,
+	input				valid_a		,
+	input	 			ready_b		,        
+Output ports：
+    output		 		ready_a		,
+ 	output	reg			valid_b		,
+	output  reg [9:0] 	data_out

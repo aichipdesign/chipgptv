@@ -1,0 +1,13 @@
+
+
+Complete a a right shifter with verilog. Unrestricted serial input with a delay of 8bits after passing through the register. The module performs an 8-bit right shift on a 1-bit input by first initializing the q register to 0. On each rising edge of the clock, the module shifts the contents of the q register to the right by one bit and inserts the new input bit d into the most significant position of the register.Here's the imcomplete verilog code: 
+ ```verilog
+module verified_right_shifter(clk, q,d);  
+     input  clk;  
+     input d;  
+     output  [7:0] q;  
+      reg   [7:0]  q; 
+    initial q = 0;
+    always 
+```
+Please complete the above verilog code.

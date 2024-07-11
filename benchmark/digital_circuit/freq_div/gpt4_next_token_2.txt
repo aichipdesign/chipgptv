@@ -1,0 +1,22 @@
+Give me the next token of the verilog code snippet.
+
+Complete a frequency divider that the input clock frequency of 100MHz signal with verilog, and the outputs are 3 clock frequencies: 50MHz, 10MHz, 1MHz.Here's the imcomplete verilog code: 
+ ```verilog
+module verified_freq_div (CLK_in,CLK_50,CLK_10,CLK_1,RST);
+input CLK_in,RST;
+output reg CLK_50,CLK_10,CLK_1;
+
+reg [3:0] cnt_10;
+reg [6:0] cnt_100;
+reg [1:0] cnt_2;
+
+always @(posedge CLK_in or posedge RST) begin
+	if (RST) begin
+		CLK_50<= 1'b0;
+                cnt_2<=0;
+        end
+	else if (cnt_2==1) begin
+		CLK_50<= ~CLK_50;
+                
+```
+Please give me the next token of the code snippet.

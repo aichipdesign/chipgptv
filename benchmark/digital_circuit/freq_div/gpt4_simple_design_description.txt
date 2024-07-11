@@ -1,0 +1,11 @@
+Generate a freq_div module.
+
+Module name:  
+    freq_div               
+Input ports：
+    input CLK_in,
+	input RST
+Output ports：
+    output reg CLK_50,
+    output reg CLK_10,
+    output reg CLK_1

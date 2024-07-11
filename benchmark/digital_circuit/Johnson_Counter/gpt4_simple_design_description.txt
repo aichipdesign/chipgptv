@@ -1,0 +1,9 @@
+Generate a Johnson_Counter module.
+
+Module name:  
+    JC_counter               
+Input ports：
+    input                clk ,
+    input                rst_n
+Output ports：
+    output reg [63:0]     Q

@@ -1,0 +1,12 @@
+
+
+The state machine has two states. One of the state is S0, the other is S1. The output of S0 is 9, the output of S1 is 8. The state machine would change its state when a is 1 and b is 0. 
+
+// State machine design
+module state_machine(
+  input a,
+  input b,
+  input clk,
+  input rst,
+  output reg [3:0] state
+);

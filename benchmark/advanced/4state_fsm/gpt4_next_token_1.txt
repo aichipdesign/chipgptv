@@ -1,0 +1,18 @@
+Give me the next token of the verilog code snippet.
+
+Complete a FSM detection circuit that detects a single bit input IN with verilog.Let the number of 1's in input be x, and the number of 0's in input be y. When x-y>0 and (x-y) modulo 4 is 3,output MATCH is high; when y-x>0 and (y-x) modulo 4 is 1,  output MATCH is high, and MATCH is 0 in other cases.Here's the imcomplete verilog code: 
+ ```verilog
+module verified_fsm4 (
+    input IN, CLK, RST,
+    output reg MATCH
+);
+
+    reg [1:0] ST_cr, ST_nt;
+
+    parameter s0 = 2'b00, s1 = 2'b01, s2 = 2'b10, s3 = 2'b11;
+
+    always @(posedge CLK or posedge RST) begin
+        if (RST)
+            
+```
+Please give me the next token of the code snippet.

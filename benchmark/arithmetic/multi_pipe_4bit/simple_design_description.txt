@@ -1,0 +1,11 @@
+Generate a multi_pipe_4bit module according to the function description in the image
+
+Module name:  
+    multi_pipe               
+Input ports：
+    input 						clk 		,   
+	input 						rst_n		,
+	input	[size-1:0]			mul_a		,
+	input	[size-1:0]			mul_b		
+Output ports：
+    output	reg	[size*2-1:0]	mul_out	

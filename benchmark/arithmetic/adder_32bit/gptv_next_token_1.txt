@@ -1,0 +1,25 @@
+Give me the next token of the verilog code snippet.
+
+Complete a module of a carry lookahead 32 bit adder based on CLAs with verilog. The datapath is shown in the picture.Here's the imcomplete verilog code: 
+ ```verilog
+module verified_adder_32bit(A,B,S,C32);
+     input [32:1] A;
+     input [32:1] B;
+     output [32:1] S;
+     output C32;
+
+     wire px1,gx1,px2,gx2;
+     wire c16;
+
+  CLA_16 CLA1(
+      .A(A[16:1]),
+        .B(B[16:1]),
+        .c0(0),
+        .S(S[16:1]),
+        .px(px1),
+        .gx(gx1)
+    );
+
+  
+```
+Please give me the next token of the code snippet.

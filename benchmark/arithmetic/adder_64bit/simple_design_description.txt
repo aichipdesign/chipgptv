@@ -1,0 +1,14 @@
+Generate a adder_64bit module according to the function description in the image
+
+Module name:  
+    adder_64bit               
+Input ports：
+    input                               clk             ,
+    input                               rst_n           ,
+    input                               i_en            ,
+    input       [DATA_WIDTH-1:0]        adda            ,
+    input       [DATA_WIDTH-1:0]        addb            ,
+   
+Output ports：
+    output reg  [DATA_WIDTH:0]          result          ,
+    output reg                          o_en            

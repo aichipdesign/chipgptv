@@ -1,0 +1,5 @@
+Generate a fsm module.
+
+module fsm(IN,MATCH,CLK,RST);
+input IN,CLK,RST;
+output reg MATCH;

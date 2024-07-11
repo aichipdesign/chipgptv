@@ -1,0 +1,224 @@
+$date
+	Sun Nov 12 18:10:31 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_pipeline $end
+$var wire 5 ! rs2 [4:0] $end
+$var wire 5 " rs1 [4:0] $end
+$var wire 32 # result [31:0] $end
+$var wire 5 $ rd2 [4:0] $end
+$var wire 5 % rd1 [4:0] $end
+$var wire 5 & rd [4:0] $end
+$var wire 2 ' op [1:0] $end
+$var wire 32 ( mem_data [31:0] $end
+$var wire 32 ) inst [31:0] $end
+$var reg 1 * clk $end
+$var reg 1 + rst $end
+$scope module decode $end
+$var wire 1 * clk $end
+$var wire 32 , inst [31:0] $end
+$var reg 2 - op [1:0] $end
+$var reg 5 . rd [4:0] $end
+$var reg 5 / rs1 [4:0] $end
+$var reg 5 0 rs2 [4:0] $end
+$upscope $end
+$scope module execute $end
+$var wire 1 * clk $end
+$var wire 2 1 op [1:0] $end
+$var wire 5 2 rdin1 [4:0] $end
+$var wire 5 3 rs1 [4:0] $end
+$var wire 5 4 rs2 [4:0] $end
+$var reg 5 5 rdout1 [4:0] $end
+$var reg 32 6 result [31:0] $end
+$upscope $end
+$scope module fetch $end
+$var wire 1 * clk $end
+$var wire 1 + rst $end
+$var reg 32 7 inst [31:0] $end
+$var reg 32 8 pc [31:0] $end
+$upscope $end
+$scope module memory $end
+$var wire 32 9 alu_result [31:0] $end
+$var wire 1 * clk $end
+$var wire 5 : rdin2 [4:0] $end
+$var reg 32 ; mem_data [31:0] $end
+$var reg 5 < rdout2 [4:0] $end
+$upscope $end
+$scope module writeback $end
+$var wire 1 * clk $end
+$var wire 32 = mem_data [31:0] $end
+$var wire 5 > rd [4:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx >
+bx =
+bx <
+bx ;
+bx :
+bx 9
+b0 8
+b0 7
+bx 6
+bx 5
+bx 4
+bx 3
+bx 2
+bx 1
+bx 0
+bx /
+bx .
+bx -
+b0 ,
+1+
+0*
+b0 )
+bx (
+bx '
+bx &
+bx %
+bx $
+bx #
+bx "
+bx !
+$end
+#5
+b0 &
+b0 .
+b0 2
+b0 '
+b0 -
+b0 1
+b0 !
+b0 0
+b0 4
+b0 "
+b0 /
+b0 3
+b0 #
+b0 6
+b0 9
+b100 8
+b10001000011000000000000011 )
+b10001000011000000000000011 ,
+b10001000011000000000000011 7
+1*
+0+
+#10
+0*
+#15
+b0 (
+b0 ;
+b0 =
+b0 %
+b0 5
+b0 :
+bx #
+bx 6
+bx 9
+b11 &
+b11 .
+b11 2
+b10 !
+b10 0
+b10 4
+b1 "
+b1 /
+b1 3
+b1000 8
+b1000010001000010000000000000011 )
+b1000010001000010000000000000011 ,
+b1000010001000010000000000000011 7
+1*
+#20
+0*
+#25
+b1 '
+b1 -
+b1 1
+b11 %
+b11 5
+b11 :
+b11110 #
+b11110 6
+b11110 9
+b0 $
+b0 <
+b0 >
+bx (
+bx ;
+bx =
+b1100 8
+b11000110000100010000000000000011 )
+b11000110000100010000000000000011 ,
+b11000110000100010000000000000011 7
+1*
+#30
+0*
+#35
+b11 $
+b11 <
+b11 >
+b11110 (
+b11110 ;
+b11110 =
+b1010 #
+b1010 6
+b1010 9
+b11 '
+b11 -
+b11 1
+b1 !
+b1 0
+b1 4
+b11 "
+b11 /
+b11 3
+b10000 8
+bx )
+bx ,
+bx 7
+1*
+#40
+0*
+#45
+bx &
+bx .
+bx 2
+bx '
+bx -
+bx 1
+bx !
+bx 0
+bx 4
+bx "
+bx /
+bx 3
+b0 #
+b0 6
+b0 9
+b1010 (
+b1010 ;
+b1010 =
+b10100 8
+1*
+#50
+0*
+#55
+b0 (
+b0 ;
+b0 =
+bx %
+bx 5
+bx :
+b11000 8
+1*
+#60
+0*

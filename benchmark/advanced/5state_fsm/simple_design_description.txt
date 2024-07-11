@@ -1,0 +1,6 @@
+Generate a 5state_fsm module according to the function description in the image
+
+module verified_fsm5 (
+    input IN, CLK, RST,
+    output reg MATCH
+);

@@ -1,0 +1,11 @@
+You are now acting as a professional verilog programmer.
+
+This is an 4x4 systolic array with weight station. Every processing unit(PE) has two input and two output. The function of every PE is to multiply two input and add the value from inner register. The systolic array receives weight from weight buffer and input from input buffer, then output to output buffer. 
+
+module spatialacc4x4(
+  input clk,
+  input rst,
+  input [15:0] weight [0:3] [0:3],
+  input [15:0] inputt [0:15],
+  output [31:0] outputt [0:15]  
+);

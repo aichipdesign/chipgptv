@@ -1,0 +1,9 @@
+Generate a right_shifter module.
+
+Module name:  
+    right_shifter               
+Input ports：
+    input  clk,  
+    input d
+Output ports：
+    output  [7:0] q

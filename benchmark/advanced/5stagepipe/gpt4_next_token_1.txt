@@ -1,0 +1,10 @@
+Give me the next token of the verilog code snippet.
+
+This five stages is a hardware pipeline that fetches instruct and execute. The instruction is add and sub. Executor fetch two operand and write back to memory.Here's the imcomplete verilog code: 
+ ```verilog
+// Instruction types
+`define ADD_INST 2'b00
+`define SUB_INST 2'b01
+// Pipeline 
+```
+Please give me the next token of the code snippet.

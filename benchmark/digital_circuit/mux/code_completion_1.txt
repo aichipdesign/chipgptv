@@ -1,0 +1,41 @@
+
+
+Complete a multi-bit MUX synchronizer with verilog, data_in will remain constant during the period when data_en is high, and data_en is high for at least 3 B clock cycles. When the value of data_en is high, data can be synchronized. The data change frequency of data_in is very low. The change interval between two adjacent data is at least 10 B clock cycles. The datapath is shown in the picture.Here's the imcomplete verilog code: 
+ ```verilog
+module verified_mux(
+	input 				clk_a	, 
+	input 				clk_b	,   
+	input 				arstn	,
+	input				brstn   ,
+	input		[3:0]	data_in	,
+	input               data_en ,
+
+	output reg  [3:0] 	dataout
+);
+    reg [3:0] data_reg;
+    reg       data_en_a, data_en_b0, data_en_b1;
+    
+    always@(posedge clk_a or negedge arstn) begin
+        if(~arstn)
+            data_reg <= 0;
+        else
+            data_reg <= data_in;
+    end
+    
+    always@(posedge clk_a or negedge arstn) begin
+        if(~arstn)
+            data_en_a <= 0;
+        else
+            data_en_a <= data_en;
+    end
+    
+    always@(posedge clk_b or negedge brstn) begin
+        if(~brstn) begin
+            data_en_b0 <= 0;
+            data_en_b1 <= 0;
+        end
+        else begin
+            data_en_b0 <= data_en_a;
+            data_en_b1 
+```
+Please complete the above verilog code.

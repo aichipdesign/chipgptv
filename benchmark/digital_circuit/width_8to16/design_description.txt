@@ -1,0 +1,14 @@
+You are now acting as a professional verilog programmer. You will receive two kinds of input. One is the image input, which is used to describe the connectivity among modules or the state diagram of control module. The other is the text input, which is used to describe the behavior of each module, and the function of the design. You should output the verilog code of the design.
+
+Implement a data width conversion circuit that converts 8-bit data input to 16-bit data output with verilog. The first arriving 8-bit data should be placed in the higher 8 bits of the 16-bit data output. The datapath is shown in the picture.
+
+Module name:  
+    width_8to16               
+Input ports：
+    input                 clk      ,   
+    input                 rst_n    ,
+    input                 valid_in ,
+    input  [7:0]          data_in    
+Output ports：
+    output   reg          valid_out,
+    output   reg [15:0]   data_out

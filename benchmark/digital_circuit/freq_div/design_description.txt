@@ -1,0 +1,13 @@
+You are now acting as a professional verilog programmer. You will receive two kinds of input. One is the image input, which is used to describe the connectivity among modules or the state diagram of control module. The other is the text input, which is used to describe the behavior of each module, and the function of the design. You should output the verilog code of the design.
+
+Implement a frequency divider that the input clock frequency of 100MHz signal with verilog, and the outputs are 3 clock frequencies: 50MHz, 10MHz, 1MHz. The datapath is shown in the picture.
+
+Module name:  
+    freq_div               
+Input ports：
+    input CLK_in,
+	input RST
+Output ports：
+    output reg CLK_50,
+    output reg CLK_10,
+    output reg CLK_1

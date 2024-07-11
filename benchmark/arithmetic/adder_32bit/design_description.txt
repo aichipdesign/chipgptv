@@ -1,0 +1,11 @@
+Please act as a professional verilog designer. You are now acting as a professional verilog programmer. You will receive two kinds of input. One is the image input, which is used to describe the connectivity among modules or the state diagram of control module. The other is the text input, which is used to describe the behavior of each module, and the function of the design. You should output the verilog code of the design.
+
+Implement a module of a carry lookahead 32 bit adder based on CLAs with verilog. The datapath is shown in the picture.
+Module name:  
+    adder_32bit               
+Input ports：
+    input [32:1] A,
+    input [32:1] B
+Output ports：
+    output [32:1] S,
+    output C32

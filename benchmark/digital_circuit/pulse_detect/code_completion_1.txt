@@ -1,0 +1,22 @@
+
+
+Complete the design where a single clock-cycle width pulse(data_in) is extracted from the A clock(fast) domain and a new single clock-width pulse (dataout) will be created in the clock domain B(slow). The frequency of clock domain A is 10 times that of clock domain B. The datapath is shown in the picture.Here's the imcomplete verilog code: 
+ ```verilog
+module verified_pulse_detect(
+	input 				clk_fast	, 
+	input 				clk_slow	,   
+	input 				rst_n		,
+	input				data_in		,
+
+	output  		 	dataout
+);
+    reg data_level, data_level1, data_level2, data_level3;
+    
+  	
+    always@(posedge clk_fast or negedge rst_n) begin
+        if(~rst_n)
+            data_level <= 0;
+        else
+            
+```
+Please complete the above verilog code.

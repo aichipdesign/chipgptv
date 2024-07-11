@@ -1,0 +1,29 @@
+Give me the next token of the verilog code snippet.
+
+Complete a series-parallel conversion circuit, the input end inputs single bit data, and when the module receives 6 input data, the output end outputs the 6bit data after splicing. The module adopts the valid-ready two-way handshake mechanism between the input and upstream, and the valid-only handshake mechanism between the output and downstream. During data concatenation, the received data is placed in the lower part of data_b. Here's the imcomplete verilog code: 
+ ```verilog
+
+module verified_serial2parallel(
+    input               clk         ,   
+    input               rst_n       ,
+    input               valid_a     ,
+    input               data_a      ,
+ 
+    output  reg            ready_a     ,
+    output  reg         valid_b     ,
+    output      [5:0]   data_b
+);
+
+always @(posedge clk or negedge rst_n) begin
+    if (!rst_n) begin
+        ready_a <= 1'b0;
+    end
+    else 
+        ready_a <= 1'b1;
+ end
+
+reg [2:0]cnt;
+reg [5:0]data_t,data_t1;
+always @(posedge clk or negedge rst_n) 
+```
+Please give me the next token of the code snippet.

@@ -1,0 +1,9 @@
+Generate a macpe module according to the function description in the image
+
+module macpe (
+  input clk,
+  input rst,
+  input [15:0] a,
+  input [15:0] b,
+  output[31:0] c
+);

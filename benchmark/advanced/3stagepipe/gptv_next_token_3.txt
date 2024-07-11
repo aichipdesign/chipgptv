@@ -1,0 +1,13 @@
+Give me the next token of the verilog code snippet.
+
+This three stages is a hardware pipeline that fetches instruct and execute. The instruction is add and sub. Executor fetch two operand and write back to memory. The datapath is shown in the picture.Here's the imcomplete verilog code: 
+ ```verilog
+// Instruction types
+`define ADD_INST 2'b00
+`define SUB_INST 2'b01
+// Pipeline stages 
+module fetch_stage(
+  input clk,
+  output 
+```
+Please give me the next token of the code snippet.

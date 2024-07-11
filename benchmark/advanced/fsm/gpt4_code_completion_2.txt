@@ -1,0 +1,6 @@
+
+
+Complete a FSM detection circuit that detects a single bit input IN with verilog. When the input is 10011, output MATCH is high, and MATCH is 0 in other cases.The state transfer diagram is shown in the picture.Here's the imcomplete verilog code: 
+ ```verilog
+```
+Please complete the above verilog code.

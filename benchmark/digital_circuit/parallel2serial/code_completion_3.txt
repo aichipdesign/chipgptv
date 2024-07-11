@@ -1,0 +1,14 @@
+
+
+Complete a module for parallel-to-serial conversion with verilog, where every four input bits are converted to one output bit. The output signal valid_in indicates the validity of the input at that time. The datapath is shown in the picture.Here's the imcomplete verilog code: 
+ ```verilog
+`timescale 1ns/1ns
+module verified_parallel2serial(
+	input wire clk  ,
+	input wire rst  ,
+	input wire [3:0]d ,
+	output wire valid_in ,
+	output wire dout
+	
+```
+Please complete the above verilog code.

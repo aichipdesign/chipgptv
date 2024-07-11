@@ -1,0 +1,16 @@
+Give me the next token of the verilog code snippet.
+
+Complete a 64-bit Johnson counter (torsional ring counter) with verilog, and cyclic state of the the similar 4-bit Johnson counter is as follows: 0000, 1000, 1100, 1110, 1111, 0111, 0011, 0001, 0000.Here's the imcomplete verilog code: 
+ ```verilog
+`timescale 1ns/1ns
+
+module verified_JC_counter(
+   input                clk ,
+   input                rst_n,
+ 
+   output reg [63:0]     Q  
+);
+    always@(posedge clk or negedge rst_n)begin
+        
+```
+Please give me the next token of the code snippet.

@@ -1,0 +1,8 @@
+
+
+Implement a FSM detection circuit that detects a single bit input IN with verilog.When the number of 1s in the input is modulo 5, the result is 4, output MATCH is high, and MATCH is 0 in other cases. 
+
+module verified_fsm5 (
+    input IN, CLK, RST,
+    output reg MATCH
+);

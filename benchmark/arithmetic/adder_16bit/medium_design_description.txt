@@ -1,0 +1,12 @@
+
+
+Implement a module of a 16-bit full adder using verilog. The datapath is shown in the picture.
+Module name:  
+    adder_16bit               
+Input ports：
+    input    [15:0]  a,
+    input    [15:0]  b,
+    input            c_up
+Output ports：
+    output    [15:0]  y,
+    output            Co

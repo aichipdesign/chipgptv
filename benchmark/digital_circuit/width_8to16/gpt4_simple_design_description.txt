@@ -1,0 +1,12 @@
+Generate a width_8to16 module.
+
+Module name:  
+    width_8to16               
+Input ports：
+    input                 clk      ,   
+    input                 rst_n    ,
+    input                 valid_in ,
+    input  [7:0]          data_in    
+Output ports：
+    output   reg          valid_out,
+    output   reg [15:0]   data_out

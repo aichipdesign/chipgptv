@@ -1,0 +1,13 @@
+You are now acting as a professional verilog programmer. You will receive two kinds of input. One is the image input, which is used to describe the connectivity among modules or the state diagram of control module. The other is the text input, which is used to describe the behavior of each module, and the function of the design. You should output the verilog code of the design.
+
+Implement a module of an 8 bit adder using verilog in gate level. The datapath is shown in the picture.
+
+Module name:  
+    adder_8bit               
+Input ports：
+    input [7:0] a, b,
+    input cin
+Output ports：
+    output [7:0] sum,
+    output SUM,
+    output cout

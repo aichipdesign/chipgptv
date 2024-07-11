@@ -1,0 +1,22 @@
+Generate a 3stagepipe module.
+
+module fetch_stage(
+  input clk,
+  output reg [31:0] inst,
+  input [31:0] instr_mem_in [0:31],
+  input rst
+);
+
+module execute_stage(
+  input clk,
+  input [31:0] inst,
+  input [31:0] reg_file [0:31],
+  output reg [31:0] result
+);
+
+module writeback_stage(
+  input clk,
+  input [31:0] result,
+  // Writeback
+  output reg [31:0] reg_file 
+);
