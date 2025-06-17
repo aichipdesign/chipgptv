@@ -1,0 +1,10 @@
+
+
+Complete a FSM detection circuit that detects a single bit input IN with verilog.When the number of 1s in the input is modulo 5, the result is 4, output MATCH is high, and MATCH is 0 in other cases.The state transfer diagram is shown in the picture. You should first give me the understanding of the state diagram in the picture, and then output the verilog code of the design.Here's the imcomplete verilog code: 
+ ```verilog
+module verified_fsm5 (
+    input IN, CLK, RST,
+    output reg MATCH
+
+```
+Please complete the above verilog code.

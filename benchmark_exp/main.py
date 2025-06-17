@@ -68,6 +68,6 @@ if __name__ == "__main__":
             elif args.method == "predict":
                 output = f"generated_code/{model_name}-predict/{instance}_{i}.v"
                 output_answer = f"generated_code/{model_name}-predict/{instance}_{i}.txt"
-                llm_predict_token(model_name, instance, output, output_answer, i+1)\
+                llm_predict_token(model_name, instance, output, output_answer, i+1)
                 
 

@@ -1,0 +1,9 @@
+Generate a 2x2systolic module.
+
+module systolic2x2(
+  input clk,
+  input rst,
+  input [15:0] weight [0:1] [0:1], // weight station
+  input [15:0] inputt [0:1] [0:1],        // input buffer
+  output [31:0] outputt [0:1] [0:1]      // output buffer 
+);

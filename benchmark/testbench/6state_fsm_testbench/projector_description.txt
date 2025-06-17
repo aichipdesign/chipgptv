@@ -1,0 +1,51 @@
+You are a verilog programmer.
+
+This is a testbench for a 6-state FSM module that detects a specific input sequence. The testbench verifies the FSM's behavior by providing an input sequence and checking if the MATCH output is correctly asserted.
+
+module testbench;
+    - Declares test signals:
+        - reg clk
+        - reg rst
+        - reg IN
+        - wire MATCH
+    
+    - Test procedure:
+        1. Initializes clock generation (10ns period)
+        2. Test sequence:
+            - Applies reset for 30ns
+            - Releases reset and applies input sequence:
+                0 -> 0 -> 1 -> 1 -> 0 -> 0 -> 1 -> 1
+            - Waits 20ns for final state
+        3. Checks final result:
+            - Displays "Design passed" if MATCH=1
+            - Displays "Error" if MATCH!=1
+        4. Ends simulation
+
+
+test module port interface:
+module fsm(
+  input CLK, 
+  input RST, 
+  input IN, 
+  output MATCH
+);
+
+signal information:
+- Clock period: 10ns (5ns high, 5ns low)
+  always #5 clk = ~clk;
+- Signal Sequence:
+  #10 rst =1; clk = 0;
+	#30 rst = 0; IN = 0;
+	#10 IN=0;
+  #10 IN=0;
+  #10 IN=1;
+  #10 IN=1;  
+  #10 IN=0;
+  #10 IN=0;
+  #10 IN=1;
+  #10 IN=1;
+  #20;
+  // check MATCH, if not 1, display "Error", else display "Design passed"
+  $finish;
+
+Please write the verilog testbench code for me.

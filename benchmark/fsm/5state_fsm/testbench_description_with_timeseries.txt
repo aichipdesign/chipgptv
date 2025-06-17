@@ -1,0 +1,49 @@
+You are a verilog programmer.
+
+This is a testbench for a 5-state finite state machine module that verifies the functionality of state transitions and pattern matching. The testbench validates that the MATCH output correctly indicates when the FSM reaches a specific state based on the input sequence IN.
+
+module testbench;
+    - Declares test signals:
+        - Clock and reset signals
+        - Input signal IN
+        - Output signal MATCH
+        - State verification logic
+    
+    - Test procedure:
+        1. Initializes clock and performs reset sequence
+        2. Test sequence:
+            - Tests FSM with specific input pattern
+            - Monitors MATCH output transitions
+            - Verifies correct pattern detection
+        3. Reports test results
+
+test module port interface:
+module fsm(
+    input IN,                   // Input signal
+    input CLK,                  // Clock signal
+    input RST,                  // Reset signal
+    output MATCH                // Match output signal
+);
+
+signal information:
+- Clock generation:
+    forever #5 clk=~clk;  // 10ns period clock
+- Reset sequence:
+    #10; rst =1; #30; rst = 0;  // Reset pulse
+- Input sequence:
+    IN=1;
+    #10 IN=1;  // Input sequence to test 5-state transitions
+    #10 IN=1;
+    #10 IN=0;
+    #10 IN=0;
+    #10 IN=0;
+    #10 IN=1;
+    #10 IN=1;
+    #10;       // Wait for final state
+- MATCH verification:
+    if(MATCH==1) $display("Your Design passed");
+    else $display("Error");
+- End:
+    $finish;
+
+Please write the verilog testbench code for me. 

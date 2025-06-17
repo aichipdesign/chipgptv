@@ -1,0 +1,24 @@
+Please act as a professional verilog designer.
+
+Implement a FSM detection circuit that detects a single bit input IN. When the number of 1s in the input is modulo 5, the result is 4, output MATCH is high, and MATCH is 0 in other cases.
+
+Module name:  
+    fsm               
+Input ports：
+    input CLK,
+    input RST,
+    input IN
+Output ports：
+    output reg MATCH
+
+The module is a finite state machine with 5 states, the finite state machine is shown below:
+states: s0, s1, s2, s3, s4
+Outputs: s0: 0, s1: 0, s2: 0, s3: 0, s4: 1
+Transitions:
+  s0: 0 -> s0, 1 -> s1
+  s1: 0 -> s1, 1 -> s2
+  s2: 0 -> s2, 1 -> s3
+  s3: 0 -> s3, 1 -> s4
+  s4: 0 -> s4, 1 -> s0
+
+Please generate the verilog code for the finite state machine.

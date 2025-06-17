@@ -1,0 +1,32 @@
+You are a verilog programmer.
+
+This is a testbench for a 2-state finite state machine module that verifies the functionality of state transitions based on input conditions. The testbench validates that the state output correctly transitions between S0 and S1 states based on input signals a and b.
+
+module testbench;
+    - Declares test signals:
+        - Clock and reset signals
+        - Input signals a, b
+        - 4-bit state output wire
+        - State verification logic
+    
+    - Test procedure:
+        1. Initializes clock generation (10ns period) and reset sequence
+        2. Test sequence:
+            - Applies reset to initialize state machine
+            - Sets input conditions (a=1, b=0) for state transitions
+            - Monitors state transitions over multiple clock cycles
+            - Verifies final state matches expected value
+        3. Reports pass/fail status and ends simulation
+
+test module port interface:
+module state_machine(
+    input a,                    // Input signal a
+    input b,                    // Input signal b
+    input clk,                  // Clock signal
+    input rst,                  // Reset signal
+    output [3:0] state          // 4-bit state output
+);
+
+The testbench performs comprehensive verification by testing the FSM state transitions with specific input patterns and checking that the state machine produces the expected state sequence.
+
+Please write the verilog testbench code for me. 

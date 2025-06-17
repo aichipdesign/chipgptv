@@ -1,0 +1,17 @@
+You are a professional verilog coder. Here's the design description: the module is a systolic array with 4 rows and 4 columns. The systolic array is shown below:
+Inputs:
+  - clk: Clock signal
+  - rst: Reset signal
+  - [16:0] weight[0:3][0:3]: 4x4 array of 16-bit weights
+  - [16:0] input_data[0:3][0:3]: 4x4 array of 16-bit input data
+  - [16:0] bias[0:3][0:3]: 4x4 array of 16-bit biases
+Outputs:
+  - [31:0] output_data[0:3][0:3]: 4x4 array of 32-bit output data
+
+Each Processing Element (PE) in the systolic array performs the following operation:
+  - c = a * b + bias
+
+The connections between the PEs are as follows:
+PE(i,j) connects input_data[i][j], weight[i][j], bias[i][j] to output_data[i][j], for i = 0 to 3, j = 0 to 3.
+
+Please generate the verilog code for the systolic array.

@@ -1,0 +1,21 @@
+You are now acting as a professional verilog programmer.
+
+The state machine has two states. One of the state is S0, the other is S1. The output of S0 is 0, the output of S1 is 1. The state machine would change its state when a is 1 and b is 0. 
+
+// State machine design
+module state_machine(
+  input a,
+  input b,
+  input clk,
+  input rst,
+  output reg [3:0] state
+);
+
+The module is a finite state machine with 2 states, the finite state machine is shown below:
+states: S0, S1
+Outputs: S0: 0, S1: 1
+Transitions:
+  S0: if (a & ~b) -> S1, else -> S0
+  S1: if (a & ~b) -> S0, else -> S1
+
+Please generate the verilog code for the finite state machine.

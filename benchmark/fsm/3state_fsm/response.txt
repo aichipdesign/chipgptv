@@ -1,0 +1,133 @@
+Please act as a professional verilog designer.
+
+
+
+Implement a FSM detection circuit that detects a single bit input IN.Let the number of 1's in input be x, and the number of 0's in input be y. When x-y>0 and (x-y) modulo 3 is 2,output MATCH is high; when y-x>0 and (y-x) modulo 3 is 1,  output MATCH is high, and MATCH is 0 in other cases.the state diagram is shown in the picture.please first give me the analysis of the picture and then give me the verilog output.
+
+
+
+Module name:  
+
+    fsm               
+
+Input ports：
+
+    input CLK,
+
+    input RST,
+
+    input IN
+
+Output ports：
+
+    output reg MATCH
+
+
+
+The module is a finite state machine with 3 states, the finite state machine is shown below:
+
+states: s0, s1, s2
+
+Outputs: s0: 0, s1: 0, s2: 1
+
+Transitions:
+
+  s0: 0 -> s2, 1 -> s1
+
+  s1: 0 -> s0, 1 -> s2
+
+  s2: 0 -> s1, 1 -> s0
+
+
+
+
+
+Please generate the verilog code for the finite state machine. 
+
+```verilog
+module fsm(input CLK, RST, IN, output reg MATCH);
+
+    parameter s0 = 2'b00;
+    parameter s1 = 2'b01;
+    parameter s2 = 2'b10;
+
+    reg [1:0] state = s0;
+    reg next_state;
+    integer x, y;
+
+    always @(posedge CLK or posedge RST) begin
+        if(RST) begin
+            state <= s0;
+            MATCH <= 0;
+        end
+        else begin
+            state <= next_state;
+            MATCH <= 0;
+
+            case(state)
+                s0: begin
+                    if(IN == 1'b0) begin
+                        next_state = s2;
+                    end
+                    else begin
+                        next_state = s1;
+                    end
+                end
+                s1: begin
+                    if(IN == 1'b0) begin
+                        next_state = s0;
+                    end
+                    else begin
+                        next_state = s2;
+                    end
+                end
+                s2: begin
+                    next_state = s1;
+                end
+            endcase
+        end
+    end
+
+    always @(posedge CLK or posedge RST) begin
+        if(RST) begin
+            MATCH <= 0;
+        end
+        else begin
+            case(state)
+                s0: begin
+                    if((y-x)>0&&(y-x)%3 == 1) begin
+                        MATCH <= 1;
+                    end
+                end
+                s1: begin
+                    if((x-y)>0&&(x-y)%3 == 2) begin
+                        MATCH <= 1;
+                    end
+                end
+                s2: begin
+                    MATCH <= 0;
+                end
+            endcase
+        end
+    end
+
+endmodule
+```
+
+Let me explain the code: 
+
+This module uses a finite state machine to detect the number of 1's and 0's in the input IN. The states are as follows:
+
+- s0: initial state
+- s1: state when IN is 1
+- s2: state when IN is 0
+
+The outputs are as follows:
+
+- MATCH = 1 when (x-y)>0 and (x-y) modulo 3 is 2
+- MATCH = 1 when (y-x)>0 and (y-x) modulo 3 is 1
+- MATCH = 0 in other cases
+
+The x and y variables are used to count the number of 1's and 0's in the input.
+
+The module has two always blocks, the first block is used to change the state based on the input, and the second block is used to set the MATCH output based on the state.

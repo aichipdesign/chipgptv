@@ -1,0 +1,35 @@
+You are a verilog programmer.
+
+This is a testbench for an 8-bit adder module. The testbench performs random testing by generating 100 test cases with random 8-bit inputs and verifies the addition operation.
+
+test module port interface:
+module adder_8bit(
+    input [7:0] a,    // First 8-bit input operand
+    input [7:0] b,    // Second 8-bit input operand 
+    input cin,        // Carry input
+    output [7:0] sum, // 8-bit sum output
+    output SUM,       // Additional sum output
+    output cout       // Carry output
+);
+
+module testbench;
+    - Declares test signals:
+        - 8-bit registers a, b for input operands
+        - 1-bit register cin for carry input
+        - 8-bit wire sum for result
+        - 1-bit wires SUM and cout for additional outputs
+        - Integer variables for loop counter and error tracking
+    
+    - Test procedure:
+        1. Runs 100 test iterations
+        2. For each iteration:
+            - Generates random 8-bit values for a and b
+            - Generates random 1-bit value for cin
+            - Waits 10 time units for computation
+            - Checks if sum equals a + b + cin
+            - Tracks errors if result is incorrect
+        3. Displays final test results:
+            - "Design passed" if no errors
+            - Number of failures if errors occurred
+
+Please write the verilog testbench code for me.

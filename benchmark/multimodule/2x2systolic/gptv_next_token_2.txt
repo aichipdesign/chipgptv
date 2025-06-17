@@ -1,0 +1,9 @@
+Give me the next token of the verilog code snippet.
+
+This is an 2x2 systolic array with weight station. Every processing unit(PE) has two input and two output. The function of every PE is to multiply two input and add the value from inner register. The systolic array receives weight from weight buffer and input from input, then output to outputt. The datapath is shown in the picture.Here's the imcomplete verilog code: 
+ ```verilog
+
+module reference(
+  
+```
+Please give me the next token of the code snippet.

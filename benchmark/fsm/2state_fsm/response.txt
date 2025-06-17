@@ -1,0 +1,114 @@
+You are now acting as a professional verilog programmer.
+
+
+
+The state machine has two states. One of the state is S0, the other is S1. The output of S0 is 9, the output of S1 is 8. The state machine would change its state when a is 1 and b is 0. 
+
+
+
+// State machine design
+
+module state_machine(
+
+  input a,
+
+  input b,
+
+  input clk,
+
+  input rst,
+
+  output reg [3:0] state
+
+);
+
+
+
+The module is a finite state machine with 2 states, the finite state machine is shown below:
+
+states: S0, S1
+
+Outputs: S0: 9, S1: 8
+
+Transitions:
+
+  S0: if (a & ~b) -> S1, else -> S0
+
+  S1: if (a & ~b) -> S0, else -> S1
+
+
+
+Please generate the verilog code for the finite state machine. 
+
+
+
+```verilog
+always @(posedge clk) begin
+
+  if (rst) begin
+    state <= 4'b0000;
+  end
+  
+  else begin
+    case(state)
+
+    4'b0000: // S0      
+      begin
+        if(a &&!b)
+          begin
+            state <= 4'b0001;
+          end
+        else
+          begin
+            state <= 4'b0000;
+          end
+      end
+
+    4'b0001: // S1      
+      begin
+        if(a &&!b)
+          begin
+            state <= 4'b0010;
+          end
+        else
+          begin
+            state <= 4'b0001;
+          end
+      end
+
+    default: state <= 4'b0000;
+    
+    endcase
+  end
+    
+  case(state)
+    
+    4'b0000: // S0      
+      begin
+        case(a)
+          1'b0: output  = 4'b1001;
+          1'b1: output = 9;
+        endcase
+      end
+      
+    4'b0001: // S1      
+      begin
+        if(a & ~b)
+          begin
+            case(a)
+              1'b0: output  = 4'b1000;
+              1'b1: output = 8;
+            endcase
+          end
+        else
+          begin
+            output = 4'b1001;
+          end
+      end
+      
+    default: output  = 4'b1001;
+    
+  endcase
+    
+endmodule
+```

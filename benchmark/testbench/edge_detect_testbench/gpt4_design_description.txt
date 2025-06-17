@@ -1,0 +1,36 @@
+You are a verilog programmer.
+
+This is a testbench for an edge detector module. The testbench verifies the detection of rising and falling edges of an input signal by testing different scenarios including no edge, rising edge, falling edge, multiple edges, and reset functionality.
+
+test module port interface:
+module edge_detect(
+    input clk,      // Clock input
+    input rst_n,    // Active low reset
+    input a,        // Input signal to detect edges
+    output rise,    // Rising edge detected
+    output down     // Falling edge detected
+);
+
+module testbench;
+    - Declares test signals:
+        - Clock signal clk
+        - Active low reset rst_n
+        - Input signal a
+        - Output wires rise and down
+        - Integer variable for error tracking
+    
+    - Test procedure:
+        1. Initializes inputs (clk=0, rst_n=1, a=0)
+        2. Tests multiple scenarios:
+            - Scenario 1: No edge (a remains 0)
+            - Scenario 2: Rising edge (a transitions 0->1)
+            - Scenario 3: Falling edge (a transitions 1->0)
+            - Scenario 4: Multiple edges (alternating transitions)
+            - Scenario 5: Reset functionality
+        3. Tracks errors if outputs don't match expected values
+        4. Displays final test results:
+            - "Design passed" if no errors
+            - Number of failures if errors occurred
+        5. Includes clock generation (10ns period)
+
+Please write the verilog testbench code for me.

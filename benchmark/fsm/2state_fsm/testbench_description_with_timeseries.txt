@@ -1,0 +1,48 @@
+You are a verilog programmer.
+
+This is a testbench for a 2-state finite state machine module that verifies the functionality of state transitions based on input conditions. The testbench validates that the state output correctly transitions between S0 and S1 states based on input signals a and b.
+
+module testbench;
+    - Declares test signals:
+        - Clock and reset signals
+        - Input signals a, b
+        - 4-bit state output wire
+        - State verification logic
+    
+    - Test procedure:
+        1. Initializes clock and performs reset sequence
+        2. Test sequence:
+            - Tests state transitions with specific input patterns
+            - Monitors state changes over time
+            - Verifies correct FSM behavior
+        3. Reports test results
+
+test module port interface:
+module state_machine(
+    input a,                    // Input signal a
+    input b,                    // Input signal b
+    input clk,                  // Clock signal
+    input rst,                  // Reset signal
+    output [3:0] state          // 4-bit state output
+);
+
+signal information:
+- Clock generation:
+    always #5 clk = ~clk;  // 10ns period clock
+- Reset sequence:
+    rst = 1; #20 rst = 0;  // Reset pulse
+- Input sequence:
+    #10; a = 1; b = 0;  // First transition condition
+    #10; a = 1; b = 0;  // Second transition condition
+    #10; a = 1; b = 0;  // Third transition condition
+    #10;                // Wait for final state
+- State verification:
+    if (state != 4'b0001) begin
+        $display("ERROR: Incorrect state transition");
+        $display("This is a test number: %b.", state);
+    end
+    else $display("Your design pass!!!");
+- End:
+    $finish;
+
+Please write the verilog testbench code for me. 

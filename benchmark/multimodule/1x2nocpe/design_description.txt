@@ -1,0 +1,15 @@
+You are now acting as a professional verilog programmer. You will receive two kinds of input. One is the image input, which is used to describe the connectivity among modules or the state diagram of control module. The other is the text input, which is used to describe the behavior of each module, and the function of the design. You should output the verilog code of the design.
+
+Every processing unit(PE) has two input and two output. The function of every PE is to multiply two input and add the value from inner register. The final result is c0. At the next cycle, the b0 will pass to right PE as b1. There are two PE. The datapath is shown in the picture.
+
+module nocpe1x2 (
+  input clk,
+  input rst,
+  input [15:0] a0,
+  input [15:0] a1,
+  input [15:0] b0,
+  output [31:0] c0,
+  output [31:0] c1
+);
+
+

@@ -1,0 +1,35 @@
+You are a verilog programmer.
+
+This is a testbench for a 1x2 NoC PE (Network-on-Chip Processing Element) module. The testbench verifies the functionality of chained processing elements by testing multiplication and data propagation between PEs.
+
+test module port interface:
+module nocpe1x2(
+    input clk,          // Clock input
+    input rst,          // Reset input
+    input [15:0] a0,    // First input operand for PE0
+    input [15:0] a1,    // Input operand for PE1
+    input [15:0] b0,    // Second input operand for PE0
+    output [31:0] c0,   // Output from PE0
+    output [31:0] c1    // Output from PE1
+);
+
+module testbench;
+    - Declares test signals:
+        - Clock signal clk
+        - Reset signal rst
+        - 16-bit input registers a0, a1, b0
+        - 32-bit output wires c0, c1
+    
+    - Test procedure:
+        1. Initializes clock generation (10ns period)
+        2. Test sequence:
+            - Sets initial values: a0=5, b0=10, a1=5
+            - Applies reset for 10ns
+            - Verifies first computation (c0 should be 50)
+            - Changes inputs: a0=20, b0=15
+            - Verifies propagated results:
+                * c0 should be 350 (20 * 15)
+                * c1 should be 50 (previous c0)
+        3. Displays "Your design passed!!!" if all tests pass
+
+Please write the verilog testbench code for me.

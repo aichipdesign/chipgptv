@@ -1,0 +1,37 @@
+You are a professional verilog coder. Here's the design description: 
+
+The systolic array is a 2D array of processing elements (PEs) arranged in a grid of size 1 x 2. Each PE is responsible for performing multiplication and accumulation operations. The PEs are connected in a specific pattern to facilitate data flow across the array.
+
+Systolic Array Interface:
+- [31:0] inp_west[0:0]: Input data coming from the west side of the array (size: 1 x 32 bits)
+- [31:0] inp_north[0:1]: Input data coming from the north side of the array (size: 2 x 32 bits)
+- clk: Clock signal
+- rst: Reset signal
+- done: Signal indicating the completion of computation
+- result: Output data from the array (size: 1 x 2 x 64 bits)
+
+Block Interface:
+- [31:0] inp_north: Input data from the north (32 bits)
+- [31:0] inp_west: Input data from the west (32 bits)
+- clk: Clock signal
+- rst: Reset signal
+- [31:0] outp_south: Output data to the south (32 bits)
+- [31:0] outp_east: Output data to the east (32 bits)
+- [63:0] result: Accumulated result (64 bits)
+
+Spatial Connections:
+- Each PE receives input data from the north and west.
+- The output data from each PE is passed to the south and east neighbors.
+- The first row of PEs receives input data from inp_north.
+- The first column of PEs receives input data from inp_west.
+- The output data from the last row and last column of PEs is collected as the final result.
+
+Example for a 2x2 Systolic Array:
+- PE(0,0) receives inp_north[0] and inp_west[0], outputs to PE(1,0) and PE(0,1)
+- PE(0,1) receives inp_north[1] and output from PE(0,0), outputs to PE(1,1) and result[0][1]
+- PE(1,0) receives output from PE(0,0) and inp_west[1], outputs to result[1][0] and PE(1,1)
+- PE(1,1) receives output from PE(0,1) and PE(1,0), outputs to result[1][1]
+
+The systolic array processes data in a pipelined manner, with data flowing through the array and accumulating results in each PE.
+
+Please generate the verilog code for the systolic array.

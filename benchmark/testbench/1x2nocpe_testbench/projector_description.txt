@@ -1,0 +1,49 @@
+You are a verilog programmer.
+
+This is a testbench for a 1x2 NoC PE (Network-on-Chip Processing Element) module that verifies the functionality of chained processing elements. The testbench checks if the output values c0 and c1 are correctly computed based on input values a0, a1, and b0.
+
+module testbench;
+    - Declares test signals:
+        - Clock signal clk
+        - Reset signal rst
+        - 16-bit input registers a0, a1, b0
+        - 32-bit output wires c0, c1
+    
+    - Test procedure:
+        1. Initializes clock generation (10ns period)
+        2. Test sequence:
+            - Sets initial input values
+            - Applies reset
+            - Verifies output values after computation
+            - Changes inputs and verifies new outputs
+        3. Ends simulation on completion
+
+test module port interface:
+module nocpe1x2(
+    input clk,          // Clock input
+    input rst,          // Reset input
+    input [15:0] a0,    // First input operand a0
+    input [15:0] a1,    // Second input operand a1 
+    input [15:0] b0,    // Input operand b0
+    output [31:0] c0,   // First output result
+    output [31:0] c1    // Second output result
+);
+
+signal information:
+- Clock period: 10ns (5ns high, 5ns low)
+    always #5 clk = ~clk;
+- Signal sequence:
+    #10 clk = 1; a0 = 5; b0 = 10; a1 = 5;
+    #10 rst <= 1;
+    #10 rst <= 0;
+    #20
+    // check c0 = 50? if not, $error
+    a0 = 20; b0 = 15;
+    #10;
+    // check c0 value, if not 350, $error
+    // check c1 value, if not 50, $error
+    // if no error, display "Your design passed!!!"
+    $finish;
+
+
+Please write the verilog testbench code for me.

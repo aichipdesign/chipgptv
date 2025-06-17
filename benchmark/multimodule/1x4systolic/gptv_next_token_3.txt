@@ -1,0 +1,12 @@
+Give me the next token of the verilog code snippet.
+
+Every processing unit(PE) has two input and two output. The function of every PE is to multiply two input and add the value from inner register. The final result of evert PE is c. At the next cycle, the b0 will pass from left PE to right PE as b1. There are four PE. The datapath is shown in the picture.Here's the imcomplete verilog code: 
+ ```verilog
+module systolic1x4(
+  input clk,
+  input rst,
+  input [15:0] a0,
+  input [15:0] a1,
+  input 
+```
+Please give me the next token of the code snippet.

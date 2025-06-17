@@ -1,0 +1,102 @@
+Please act as a professional verilog designer.
+
+
+
+Implement a FSM detection circuit that detects a single bit input IN.Let the number of 1's in input be x, and the number of 0's in input be y. When x-y>0 and (x-y) modulo 4 is 3,output MATCH is high; when y-x>0 and (y-x) modulo 4 is 1,  output MATCH is high, and MATCH is 0 in other cases.
+
+
+
+Module name:  
+
+    fsm               
+
+Input ports：
+
+    input CLK,
+
+    input RST,
+
+    input IN
+
+Output ports：
+
+    output reg MATCH
+
+
+
+The module is a finite state machine with 4 states, the finite state machine is shown below:
+
+states: s0, s1, s2, s3
+
+Outputs: s0: 0, s1: 0, s2: 0, s3: 1
+
+Transitions:
+
+  s0: 0 -> s3, 1 -> s1
+
+  s1: 0 -> s0, 1 -> s2
+
+  s2: 0 -> s1, 1 -> s3
+
+  s3: 0 -> s2, 1 -> s0
+
+
+
+Please generate the verilog code for the finite state machine. The MATCH output is used here.
+
+```verilog
+module fsm(
+    input CLK,
+    input RST,
+    input IN,
+    output reg MATCH
+);
+
+    parameter s0 = 2'b00, s1 = 2'b01, s2 = 2'b10, s3 = 2'b11;
+    reg [1:0] state;
+    
+    always @(posedge CLK) begin
+        if(RST) begin
+            state <= s0;
+            MATCH <= 1'b0;
+        end
+        else begin
+            case(state)
+                s0: begin
+                    if(IN == 1'b1)
+                        state <= s1;
+                    else
+                        state <= s3;
+                end
+                s1: begin
+                    if(IN == 1'b0)
+                        state <= s0;
+                    else
+                        state <= s2;
+                end
+                s2: begin
+                    if(IN == 1'b0)
+                        state <= s1;
+                    else
+                        state <= s3;
+                end
+                s3: begin
+                    if(IN == 1'b0)
+                        state <= s2;
+                    else
+                        state <= s0;
+                end
+            endcase
+            if(state == s0)
+                MATCH <= 1'b0;
+            else if(state == s1)
+                MATCH <= 1'b0;
+            else if(state == s2)
+                MATCH <= 1'b0;
+            else if(state == s3)
+                MATCH <= 1'b1;
+        end
+    end
+    
+endmodule
+```

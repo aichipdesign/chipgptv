@@ -1,0 +1,80 @@
+You are a verilog programmer.
+
+This is a testbench for an edge detector module that verifies rising and falling edge detection functionality through multiple test scenarios. The testbench checks if rise and down outputs are correctly asserted based on input transitions.
+
+module testbench;
+    - Declares test signals:
+        - Clock signal clk
+        - Reset signal rst_n
+        - Input signal a
+        - Output wires rise, down
+        - Integer variable for error tracking
+    
+    - Test procedure:
+        1. Initializes signals and waits 10ns
+        2. Runs 5 test scenarios checking edge detection
+        3. Checks final results:
+            - Displays "Design passed" if no errors
+            - Displays failure count if errors occurred
+        4. Ends simulation
+
+test module port interface:
+module edge_detect(
+    input clk,          // Clock input
+    input rst_n,        // Active low reset
+    input a,            // Input signal
+    output rise,        // Rising edge detected
+    output down         // Falling edge detected
+);
+
+signal information:
+- Clock period: 10ns (5ns high, 5ns low)
+   always #5 clk = ~clk;
+- Signal Sequence:
+   // Test scenario 1: No edge
+   clk = 0;
+   rst_n = 1;
+   a = 0;
+   #10;
+   a = 0;
+   #5;
+   a = 0;
+   #5;
+   // check rise and down, if not 0, error++
+   // Test scenario 2: Rising edge
+   a = 0;
+   #5;
+   a = 1;
+   #5;
+   a = 1;
+   #5;
+   // check rise and down, if not 1 0, error++
+   // Test scenario 3: Falling edge
+   a = 1;
+   #5;
+   a = 0;
+   #5;
+   a = 0;
+   #5;
+   // check rise and down, if not 0 1, error++
+   // Test scenario 4: Both edges
+   a = 0;
+   #5;
+   a = 1;
+   #5;
+   a = 0;
+   #5;
+   a = 1;
+   #5;
+   // check rise and down, if not 0 0, error++
+   // Test scenario 5: Reset
+   rst_n = 0;
+   #10;
+   rst_n = 1;
+   #10;
+   // if all test scenarios passed, display "Design passed"
+   // if not, display "Failure count: <error count>"
+   $finish;
+
+
+Please write the verilog testbench code for me.

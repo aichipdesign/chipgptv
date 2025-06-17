@@ -1,0 +1,9 @@
+Generate a 4x4spatialacc module according to the function description in the image
+
+module spatialacc4x4(
+  input clk,
+  input rst,
+  input [15:0] weight [0:3] [0:3],
+  input [15:0] inputt [0:15],
+  output [31:0] outputt [0:15]  
+);
